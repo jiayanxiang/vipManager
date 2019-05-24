@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC
+        "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.jyx.vip.dao.UserDao">
+
+    <select id="select" resultType="com.jyx.vip.model.UserModel">
+        SELECT *FROM sys_user WHERE ${key}=#{value}
+    </select>
+    <update id="update">
+        UPDATE sys_user SET account=?,name=?,password=? WHERE ${key}=#{value}
+    </update>
+
+</mapper>
